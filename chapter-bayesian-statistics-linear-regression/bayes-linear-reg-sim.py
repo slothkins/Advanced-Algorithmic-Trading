@@ -21,12 +21,13 @@ def simulate_linear_data(N, beta_0, beta_1, eps_sigma_sq):
     # N uniformly sampled values between 0.0 and 1.0
     df = pd.DataFrame(
         {"x": 
-            np.random.RandomState(42).choice(
+            np.random.RandomState(42).choice(list(
                 map(
                     lambda x: float(x)/100.0, 
                     np.arange(N)
-                ), N, replace=False
+                )), N, replace=False
             )
+
         }
     )
 
@@ -54,7 +55,7 @@ def glm_mcmc_inference(df, iterations=5000):
     with basic_model:
         # Create the glm using the Patsy model syntax
         # We use a Normal distribution for the likelihood
-        pm.glm.glm("y ~ x", df, family=pm.glm.families.Normal())
+        pm.glm.GLM.from_formula("y ~ x", df, family=pm.glm.families.Normal())
 
         # Use Maximum A Posteriori (MAP) optimisation 
         # as initial value for MCMC

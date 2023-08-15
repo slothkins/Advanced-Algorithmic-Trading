@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Advanced-Algorithmic-Trading.iml" filepath="$PROJECT_DIR$/.idea/Advanced-Algorithmic-Trading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../vols_and_skews_cloudrun/.idea/vols_and_skews_cloudrun.iml" filepath="$PROJECT_DIR$/../vols_and_skews_cloudrun/.idea/vols_and_skews_cloudrun.iml" />
     </modules>
   </component>
 </project>
